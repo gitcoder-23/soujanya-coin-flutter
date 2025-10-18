@@ -27,14 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              appNormalText(
-                title: 'Soujanya',
-                fontSize: 25,
-                textAlign: TextAlign.center,
-                textColor: appRedColor3,
-                textFontWeight: FontWeight.w600,
-              ),
-              SizedBox(height: 30),
+              Image.asset('assets/images/soujanya_logo.jpeg', height: 250),
               textfield(
                 context: context,
                 hinttext: "Enter Phone Number*",
