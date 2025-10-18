@@ -1,0 +1,51 @@
+List<Map<String, dynamic>> transactionList = [
+  {
+    "title": "Coins for UPI spends on card Sep 2025",
+    "transactionData": "25 Nov 2024",
+    "coins": 50,
+    "isProfit": true,
+    // add dummy transactionId and coinPrice
+    "transactionId": "dd56df454544hfdh44",
+    "coinPrice": "1040.67",
+  },
+  {
+    "title": "Coins for UPI spends on card Oct 2025",
+    "transactionData": "25 Dec 2024",
+    "coins": 100,
+    "isProfit": false,
+    "transactionId": "456df45454dfds4hfdh44",
+    "coinPrice": "980.00",
+  },
+  {
+    "title": "Coins for UPI spends on card Nov 2025",
+    "transactionData": "25 Jan 2025",
+    "coins": 150,
+    "isProfit": true,
+    "transactionId": "4426df45454dfds4hfdh64",
+    "coinPrice": "1025.50",
+  },
+  {
+    "title": "Coins for UPI spends on card Dec 2025",
+    "transactionData": "25 Feb 2025",
+    "coins": 200,
+    "isProfit": false,
+    "transactionId": "142356df45454dfds4hfdh44",
+    "coinPrice": "995.75",
+  },
+  {
+    "title": "Coins for UPI spends on card Jan 2026",
+    "transactionData": "25 Mar 2025",
+    "coins": 250,
+    "isProfit": true,
+    "transactionId": "65456df45454dfds4hfdh44",
+    "coinPrice": "1100.00",
+  },
+  {
+    "title": "Coins for UPI spends on card Feb 2026",
+    "transactionData": "25 Apr 2025",
+    "coins": 300,
+    "isProfit": false,
+    "transactionId": "rf456df45454dfds4hf44",
+    "coinPrice": "875.25",
+  },
+];
