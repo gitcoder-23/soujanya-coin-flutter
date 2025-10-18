@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:saujanya/constants/colors.dart';
+import 'package:saujanya/controllers/auth_controller.dart';
 import 'package:saujanya/utils/custom_widgets.dart';
 
 import 'dashboard_widgets/coin_section.dart';
@@ -15,6 +17,8 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  AuthController authController = Get.put(AuthController());
+
   void handleTransactionDetails(BuildContext context, Map transaction) {
     showModalBottomSheet(
       isDismissible: true,
@@ -31,7 +35,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: whiteColor,
+        actionsPadding: EdgeInsets.symmetric(horizontal: 10),
+        backgroundColor: appBlueColor.withOpacity(0.4),
         centerTitle: true,
         elevation: 1,
         title: appNormalText(
@@ -41,6 +46,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
           textColor: blackColor,
           textFontWeight: FontWeight.w600,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              authController.quickLogOut(context);
+            },
+            icon: Icon(Icons.logout),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Column(

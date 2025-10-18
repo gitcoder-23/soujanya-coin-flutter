@@ -141,6 +141,7 @@ class AuthController extends GetxController {
     log('Logout API call successful:--Quick');
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.remove('userToken');
+    await prefs.clear();
     userToken = '';
 
     Navigator.of(context).pushNamedAndRemoveUntil(

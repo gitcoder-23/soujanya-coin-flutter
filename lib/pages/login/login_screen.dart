@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:saujanya/constants/colors.dart';
-import 'package:saujanya/routes/page_route.dart';
 
 import '../../controllers/auth_controller.dart';
 import '../../utils/custom_widgets.dart';
