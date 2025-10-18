@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:saujanya/constants/colors.dart';
 import 'package:saujanya/routes/page_route.dart';
 
+import '../../controllers/auth_controller.dart';
 import '../../utils/custom_widgets.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -14,28 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController phoneController = TextEditingController();
-
-  void onLogin() {
-    // Close the keyboard
-    FocusScope.of(context).unfocus();
-
-    String phoneNumber = phoneController.text;
-
-    RegExp phoneRegExp = RegExp(r'^[0-9]{10}$');
-
-    if (phoneNumber.isEmpty) {
-      showToast(context, "Please enter phone number", blackColor3);
-    } else if (!phoneRegExp.hasMatch(phoneNumber)) {
-      showToast(
-        context,
-        "Please enter a valid 10-digit phone number",
-        blackColor3,
-      );
-    } else {
-      Navigator.of(context).pushReplacementNamed(PageRoutes.dashboardScreen);
-    }
-  }
+  AuthController authController = Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -57,25 +38,39 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 30),
               textfield(
                 context: context,
-                hinttext: "Enter Phone Number",
-                controller: phoneController,
+                hinttext: "Enter Phone Number*",
+                controller: authController.phoneController,
+                isNumberOnly: true,
+              ),
+              SizedBox(height: 20),
+              textfield(
+                context: context,
+                textFieldBackgroundColor: whiteColor,
+                controller: authController.passwordController,
+                hinttext: 'Enter Password*',
+                obscureText: true,
               ),
               SizedBox(height: 20),
 
-              appFullButton(
-                buttonText: 'Login',
-                ontap: () {
-                  onLogin();
-                },
-                textFontSize: 16,
-                btnColor: appBlueColor,
-                btnTextColor: whiteColor,
-                btnHeight: 50,
-                btnTextFontWeight: FontWeight.w600,
-                buttonIcon: Icons.arrow_forward_outlined,
-                fontFamily: 'Jost',
-                buttonIconSize: 20,
-              ),
+              Obx(() {
+                final bool isLoading = authController.isLoginLoading.value;
+                return appFullButton(
+                  buttonText: isLoading ? 'Logging in...' : 'Login',
+                  ontap: isLoading
+                      ? null
+                      : () {
+                          authController.onLogin(context);
+                        },
+                  textFontSize: 16,
+                  btnColor: isLoading ? Colors.grey : appBlueColor,
+                  btnTextColor: whiteColor,
+                  btnHeight: 50,
+                  btnTextFontWeight: FontWeight.w600,
+                  buttonIcon: isLoading ? null : Icons.arrow_forward_outlined,
+                  fontFamily: 'Jost',
+                  buttonIconSize: 20,
+                );
+              }),
             ],
           ),
         ),
