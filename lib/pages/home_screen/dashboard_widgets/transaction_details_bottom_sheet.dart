@@ -34,83 +34,100 @@ class TransactionDetailsBottomSheet extends StatelessWidget {
             ],
           ),
           SizedBox(height: 15),
-          Container(
-            margin: EdgeInsets.only(bottom: 15),
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            width: double.infinity,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                appNormalText(
-                  title: 'Coins Redeemed',
-                  fontSize: 18,
-                  textFontWeight: FontWeight.w500,
-                ),
-                SizedBox(height: 8),
-                appNormalText(
-                  title: transaction['coinPrice'],
-                  fontSize: 20,
-                  textColor: blackColor,
-                  textFontWeight: FontWeight.w600,
-                ),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            width: double.infinity,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                appNormalText(
-                  title: 'Transaction Id',
-                  fontSize: 18,
-                  textFontWeight: FontWeight.w500,
-                ),
-                SizedBox(height: 8),
-                appNormalText(
-                  title: transaction['transactionId'],
-                  fontSize: 18,
-                  textColor: blackColor,
-                  textFontWeight: FontWeight.w600,
-                ),
-                SizedBox(height: 8),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(bottom: 15),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    width: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        appNormalText(
+                          title: 'Coins Redeemed',
+                          fontSize: 18,
+                          textFontWeight: FontWeight.w500,
+                        ),
+                        SizedBox(height: 8),
+                        appNormalText(
+                          title: transaction['coinPrice'],
+                          fontSize: 20,
+                          textColor: blackColor,
+                          textFontWeight: FontWeight.w600,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    width: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        appNormalText(
+                          title: 'Transaction Id',
+                          fontSize: 18,
+                          textFontWeight: FontWeight.w500,
+                        ),
+                        SizedBox(height: 8),
+                        appNormalText(
+                          title: transaction['transactionId'],
+                          fontSize: 18,
+                          textColor: blackColor,
+                          textFontWeight: FontWeight.w600,
+                        ),
+                        SizedBox(height: 8),
 
-                appNormalText(
-                  title: 'Ordered On',
-                  fontSize: 18,
-                  textFontWeight: FontWeight.w500,
-                ),
-                SizedBox(height: 8),
-                appNormalText(
-                  title: transaction['transactionData'],
-                  fontSize: 18,
-                  textColor: blackColor,
-                  textFontWeight: FontWeight.w600,
-                ),
-              ],
-            ),
-          ),
+                        appNormalText(
+                          title: 'Ordered On',
+                          fontSize: 18,
+                          textFontWeight: FontWeight.w500,
+                        ),
+                        SizedBox(height: 8),
+                        appNormalText(
+                          title: transaction['transactionData'],
+                          fontSize: 18,
+                          textColor: blackColor,
+                          textFontWeight: FontWeight.w600,
+                        ),
+                      ],
+                    ),
+                  ),
 
-          SizedBox(height: 10),
-          Center(
-            child: appNormalText(
-              title: 'FAQS',
-              fontSize: 18,
-              textColor: pinkColor2,
-              textFontWeight: FontWeight.w600,
-              textAlign: TextAlign.center,
+                  SizedBox(height: 10),
+                  appNormalText(
+                    title:
+                        'Active Soujanya Card holders will earn upto 5% Soujanya Coins on their eligible Tata Neu orders. *T&C Apply',
+                    fontSize: 15,
+                    textColor: blackColor,
+                    textFontWeight: FontWeight.w400,
+                  ),
+
+                  SizedBox(height: 10),
+                  Center(
+                    child: appNormalText(
+                      title: 'FAQS',
+                      fontSize: 16,
+                      textColor: pinkColor2,
+                      textFontWeight: FontWeight.w600,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
             ),
           ),
-          SizedBox(height: 20),
         ],
       ),
     );

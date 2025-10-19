@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
     }
 
     return MaterialApp(
-      title: 'Soujanya',
+      title: 'Soujanya Coin',
       debugShowCheckedModeBanner: false,
 
       theme: ThemeData(
