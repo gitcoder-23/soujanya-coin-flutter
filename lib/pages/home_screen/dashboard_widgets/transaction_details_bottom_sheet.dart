@@ -107,7 +107,7 @@ class TransactionDetailsBottomSheet extends StatelessWidget {
                   SizedBox(height: 10),
                   appNormalText(
                     title:
-                        'Active Soujanya Card holders will earn upto 5% Soujanya Coins on their eligible Tata Neu orders. *T&C Apply',
+                        'Active Soujanya Card holders will earn upto 5% Soujanya Coins on their eligible Soujanya orders. *T&C Apply',
                     fontSize: 15,
                     textColor: blackColor,
                     textFontWeight: FontWeight.w400,
