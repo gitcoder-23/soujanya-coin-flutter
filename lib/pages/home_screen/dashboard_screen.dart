@@ -40,7 +40,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         centerTitle: true,
         elevation: 1,
         title: appNormalText(
-          title: 'Soujanya Coins',
+          title: 'Soujanya Coin',
           fontSize: 20,
           textAlign: TextAlign.center,
           textColor: blackColor,
